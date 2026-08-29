@@ -12,7 +12,7 @@
     {
       "name": "didwork",
       "source": "./plugins/didwork",
-      "description": "Verify outcomes instead of trusting claims: Stripe, GitHub, GitLab, Linear, Jira, Sentry, email, and HTTP checks via the DidWork MCP server."
+      "description": "Your agent said it's done. Did it work? Independent verification that outcomes actually happened — verdicts your agent can gate on, not self-grading."
     }
   ]
 }
