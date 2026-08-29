@@ -5,7 +5,7 @@
   "description": "Your agent said it's done. Did it work? DidWork independently verifies outcomes — Stripe refunds, merged PRs, passing pipelines, delivered email, healthy endpoints — and returns a verdict your agent can gate on.",
   "author": {
     "name": "DidWork",
-    "email": "ryan@pulltrader.app",
+    "email": "hello@didwork.sh",
     "url": "https://didwork.sh"
   },
   "license": "MIT",
