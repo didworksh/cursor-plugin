@@ -1,0 +1,14 @@
+{
+  "name": "didwork",
+  "displayName": "DidWork",
+  "version": "0.1.0",
+  "description": "Your agent said it's done. Did it work? DidWork independently verifies outcomes — Stripe refunds, merged PRs, passing pipelines, delivered email, healthy endpoints — and returns a verdict your agent can gate on.",
+  "author": {
+    "name": "DidWork",
+    "email": "ryan@pulltrader.app",
+    "url": "https://didwork.sh"
+  },
+  "license": "MIT",
+  "keywords": ["verification", "agents", "mcp", "stripe", "github", "outcomes", "didwork"],
+  "logo": "assets/logo.png"
+}

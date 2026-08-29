@@ -1,0 +1,18 @@
+{
+  "name": "didwork",
+  "owner": {
+    "name": "DidWork",
+    "email": "ryan@pulltrader.app"
+  },
+  "metadata": {
+    "description": "DidWork plugins for Cursor — independently verify that the outcomes your software claims are actually true.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "didwork",
+      "source": "./plugins/didwork",
+      "description": "Verify outcomes instead of trusting claims: Stripe, GitHub, GitLab, Linear, Jira, Sentry, email, and HTTP checks via the DidWork MCP server."
+    }
+  ]
+}
