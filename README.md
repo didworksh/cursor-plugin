@@ -21,6 +21,8 @@ curl -s https://api.didwork.sh/v1/verify \
   -d '{"type":"http.ok","expected":{"url":"https://your.app/health"}}'
 ```
 
+Using Claude Code instead? The same plugin is packaged for Claude Code at [didworksh/claude-plugin](https://github.com/didworksh/claude-plugin).
+
 ## About this repository
 
 This repo contains only the plugin packaging: manifests, rules, skills, and the MCP configuration. The DidWork verification service itself is a hosted API at `https://api.didwork.sh`; the client SDKs are published as [`@didwork/sdk`](https://www.npmjs.com/package/@didwork/sdk) (TypeScript) and `didwork` (Python).
