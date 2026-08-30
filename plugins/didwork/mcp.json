@@ -2,10 +2,10 @@
   "mcpServers": {
     "didwork": {
       "command": "npx",
-      "args": ["-y", "@didwork/mcp"],
-      "env": {
-        "DIDWORK_API_KEY": "${DIDWORK_API_KEY}"
-      }
+      "args": [
+        "-y",
+        "@didwork/mcp"
+      ]
     }
   }
 }

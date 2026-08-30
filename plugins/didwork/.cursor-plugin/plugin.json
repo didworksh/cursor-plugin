@@ -1,7 +1,7 @@
 {
   "name": "didwork",
   "displayName": "DidWork",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Your agent said it's done. Did it work? Independent verification that outcomes actually happened — verdicts your agent can gate on, not self-grading.",
   "author": {
     "name": "DidWork",
