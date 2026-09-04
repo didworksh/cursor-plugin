@@ -31,4 +31,4 @@ Docs: https://didwork.sh/docs · Contact: https://didwork.sh
 
 ## License
 
-The contents of this repository (plugin configuration and documentation) are MIT licensed — see [LICENSE](LICENSE). The DidWork hosted service is a separate commercial offering and is not licensed by this repository.
+The contents of this repository (plugin configuration and documentation) are licensed under the Apache License, Version 2.0 — see [LICENSE](LICENSE). The DidWork hosted service is a separate commercial offering and is not licensed by this repository.

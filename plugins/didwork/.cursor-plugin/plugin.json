@@ -1,14 +1,14 @@
 {
   "name": "didwork",
   "displayName": "DidWork",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "Your agent said it's done. Did it work? Independent verification that outcomes actually happened — verdicts your agent can gate on, not self-grading.",
   "author": {
     "name": "DidWork",
     "email": "hello@didwork.sh",
     "url": "https://didwork.sh"
   },
-  "license": "MIT",
+  "license": "Apache-2.0",
   "keywords": [
     "verification",
     "agents",
