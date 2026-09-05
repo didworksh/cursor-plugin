@@ -4,7 +4,11 @@
       "command": "npx",
       "args": [
         "-y",
-        "@didwork/mcp@0.0.9"
+        "-p",
+        "@didwork/mcp@0.0.10",
+        "-p",
+        "@didwork/inspect@0.0.1",
+        "didwork-mcp"
       ]
     }
   }

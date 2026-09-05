@@ -6,7 +6,7 @@ This repository packages [DidWork](https://didwork.sh) as a Cursor plugin. DidWo
 
 ## What's in the plugin
 
-- **MCP server** — `did_verify`, `did_get`, `did_list`, `did_watch`, `did_watches`, `did_unwatch`, `did_usage`, provided by the published [`@didwork/mcp`](https://www.npmjs.com/package/@didwork/mcp) package (run via `npx`, nothing vendored here).
+- **MCP server** — `did_verify`, `did_get`, `did_list`, `did_watch`, `did_watches`, `did_unwatch`, `did_usage`, and `did_inspect_tool` (Capability Trust: what a project's agent tools can actually affect, with evidence), provided by the published [`@didwork/mcp`](https://www.npmjs.com/package/@didwork/mcp) and [`@didwork/inspect`](https://www.npmjs.com/package/@didwork/inspect) packages (run via `npx`, nothing vendored here).
 - **Rule** (`verify-outcomes`) — nudges the agent to verify external side effects before reporting success.
 - **Skill** (`verify-outcomes`) — the full workflow and claim-type reference.
 - **Command** (`/verify`) — verify a claimed outcome on demand.

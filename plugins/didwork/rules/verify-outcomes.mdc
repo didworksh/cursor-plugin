@@ -9,4 +9,5 @@ verify-outcomes:
 - `verified` → proceed. `failed` → stop and report the evidence. `unknown` → do not proceed yet; poll with `did_get` or re-verify.
 - Prefer specific claim types (`stripe.refund`, `github.pr_merged`, `github.workflow_passed`, `email.delivered`, `linear.issue_completed`, `sentry.issue_resolved`) over generic ones; use `http.ok` for any public URL health check.
 - For outcomes that must stay true (a subscription staying active, an endpoint staying healthy), set up a `did_watch` instead of re-checking manually.
+- Before calling a project's own agent tool that could have real-world consequences (money, email, deploys, deletes, permissions), call `did_inspect_tool` to learn what it can actually affect; treat `unknown` risk as not shown to be safe. When verifying work such a tool performed, pass its profile as `tools` in `did_verify` so the receipt records what the tool could affect.
 - Never fabricate a verdict. If DidWork returns an error or the tool is unavailable, say verification could not be performed.

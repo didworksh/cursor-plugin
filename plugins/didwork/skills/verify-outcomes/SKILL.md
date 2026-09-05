@@ -28,6 +28,7 @@ A function can execute, an API can return `200`, and an agent can report "done" 
    - `unknown` — treat as "not yet"; poll with `did_get` or re-verify. Never treat unknown as success.
 4. For outcomes that must remain true over time, create a watch with `did_watch` (interval like `10m` or `1h`, optional `webhook_url`). List with `did_watches`, stop with `did_unwatch`.
 5. Review recent verifications and evidence with `did_list`; check quota with `did_usage`.
+6. Before calling a project's own agent tool with real-world consequences, call `did_inspect_tool` (optionally with `tool` for the full profile). It returns the tool's evidenced capabilities with `file:line` evidence, a risk level, a separate confidence level, and `DECLARATION_MISMATCH` when the implementation exceeds what the tool declares. Treat `unknown` as "not shown to be safe". When verifying work such a tool performed, pass its profile in `did_verify`'s `tools` so the receipt records what the tool could affect — it is context on the receipt, not evidence for the verdict.
 
 ## Setup
 
