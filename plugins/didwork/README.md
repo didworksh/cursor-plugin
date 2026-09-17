@@ -11,6 +11,7 @@ DidWork receives a claim (`type` + `expected`), gathers evidence from the author
 | MCP config | `mcp.json` | Runs `npx -y -p @didwork/mcp -p @didwork/inspect didwork-mcp` with your `DIDWORK_API_KEY` |
 | Rule | `rules/verify-outcomes.mdc` | Verify external side effects before reporting success |
 | Skill | `skills/verify-outcomes/SKILL.md` | Claim types and the verify → gate workflow |
+| Command | `commands/demo.md` | `/demo` — see a false claim get caught, in under a minute, with no key |
 | Command | `commands/verify.md` | `/verify` a claimed outcome on demand |
 | Command | `commands/setup.md` | `/setup` — guided first run: prove the connection, detect the stack, backfill verdicts |
 
