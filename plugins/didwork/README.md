@@ -6,6 +6,10 @@ DidWork receives a claim (`type` + `expected`), gathers evidence from the author
 
 ## Contents
 
+![A DidWork receipt: the claim, the evidence, and a FAILED verdict](assets/receipt-failed.png)
+
+Every verdict is a receipt like this one — the claim, the evidence gathered from the system that can prove it, the verdict, and what has to be repaired.
+
 | Piece | Path | Purpose |
 | --- | --- | --- |
 | MCP config | `mcp.json` | Runs `npx -y -p @didwork/mcp -p @didwork/inspect didwork-mcp` with your `DIDWORK_API_KEY` |
