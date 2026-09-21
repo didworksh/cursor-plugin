@@ -5,9 +5,9 @@
       "args": [
         "-y",
         "-p",
-        "@didwork/mcp@0.0.10",
+        "@didwork/mcp@0.1.0",
         "-p",
-        "@didwork/inspect@0.0.1",
+        "@didwork/inspect@0.3.0",
         "didwork-mcp"
       ]
     }
