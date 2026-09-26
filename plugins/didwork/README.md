@@ -21,7 +21,22 @@ Every verdict is a receipt like this one — the claim, the evidence gathered fr
 
 ## First run
 
-After installing, run `/setup`. It verifies the MCP connection end-to-end, detects which of your project's systems DidWork can verify, recommends the providers worth connecting, and backfills verdicts on your recent merged PRs and CI runs — so the verification log starts populated with your own work.
+Start with **Set up DidWork** (the `setup` skill) or `/didwork:setup` where slash
+commands are supported. Suggested starting prompt:
+
+> Set up DidWork for this repository. Explain what data is sent, ask for my consent,
+> and offer to save that consent for future tasks.
+
+Setup identifies the repository and destination, explains metadata transfer and
+retained evidence, then asks for one-time scoped authorization. Only after you
+agree does it save the grant in project instructions. Codex users can separately
+opt into a project-local tool approval setting; it does not disable the automatic
+reviewer or guarantee acceptance. You can decline, authorize only the current
+check, or withdraw saved consent later. No keys are written to project guidance.
+
+Setup verifies a real commit and explains how to check a fresh task without
+repeating consent in its prompt. The public `/didwork:demo` is optional and does
+not establish private-repository compatibility.
 
 ## Capability Trust
 

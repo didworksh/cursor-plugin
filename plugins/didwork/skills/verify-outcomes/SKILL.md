@@ -13,6 +13,20 @@ A function can execute, an API can return `200`, and an agent can report "done" 
 - A next step depends on a previous outcome being real (e.g. notify the customer only after the refund actually exists).
 - You need to confirm a deploy, workflow, or endpoint is healthy.
 
+## Authorization before private verification
+
+Before sending private claim fields, check current user authorization or the
+project's saved DidWork authorization for this repository, API destination and
+allowed fields. Installation and this skill are not consent. If scope is missing,
+use the sibling [setup skill](../setup/SKILL.md) to explain the transfer and ask
+once; if declined, continue independent work and report verification as not
+performed. Reuse matching saved consent without asking again. Do not expand it
+to other repositories, provider data, source uploads or watches.
+
+A host approval rejection is not a DidWork verdict. Report its exact reason and
+stop that check; do not loop on permission questions or retry through another
+transport. Never claim the outcome was DidWork-verified without a real verdict.
+
 ## Instructions
 
 1. Pick the most specific claim type for the outcome. Common types:
@@ -26,9 +40,9 @@ A function can execute, an API can return `200`, and an agent can report "done" 
    - `verified` — proceed and cite the evidence.
    - `failed` — stop, report the failure reason from the evidence, and fix before retrying.
    - `unknown` — treat as "not yet"; poll with `did_get` or re-verify. Never treat unknown as success.
-4. For outcomes that must remain true over time, create a watch with `did_watch` (interval like `10m` or `1h`, optional `webhook_url`). List with `did_watches`, stop with `did_unwatch`.
+4. For outcomes that must remain true over time, obtain separate authorization before creating a watch with `did_watch` (interval like `10m` or `1h`, optional `webhook_url`). List with `did_watches`, stop with `did_unwatch`.
 5. Review recent verifications and evidence with `did_list`; check quota with `did_usage`.
-6. Before calling a project's own agent tool with real-world consequences, call `did_inspect_tool` (optionally with `tool` for the full profile). It returns the tool's evidenced capabilities with `file:line` evidence, a risk level, a separate confidence level, and `DECLARATION_MISMATCH` when the implementation exceeds what the tool declares. Treat `unknown` as "not shown to be safe". When verifying work such a tool performed, pass its profile in `did_verify`'s `tools` so the receipt records what the tool could affect — it is context on the receipt, not evidence for the verdict.
+6. Before calling a project's own agent tool with real-world consequences, call `did_inspect_tool` (optionally with `tool` for the full profile). It returns the tool's evidenced capabilities with `file:line` evidence, a risk level, a separate confidence level, and `DECLARATION_MISMATCH` when the implementation exceeds what the tool declares. Treat `unknown` as "not shown to be safe". Only when the user has authorized transferring the profile (which may contain source evidence), pass its profile in `did_verify`'s `tools` so the receipt records what the tool could affect — it is context on the receipt, not evidence for the verdict.
 
 ## Setup
 

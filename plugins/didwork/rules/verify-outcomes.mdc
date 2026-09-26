@@ -5,9 +5,12 @@ alwaysApply: false
 
 verify-outcomes:
 
+- Before private verification, check current or saved authorization for the repository, destination and data fields. Installation is not consent. If missing, use the bundled setup skill to ask once and offer to save the scope; honor refusals and continue independent work.
+- A host rejection is not a DidWork verdict. Report its exact reason and stop that check without another transport or repeated permission requests.
+
 - After performing an action whose outcome lives in an external system, do not declare it done based on your own output or an API's `200`. Call the `did_verify` tool with a claim (`type` + `expected`) and gate on the verdict.
 - `verified` → proceed. `failed` → stop and report the evidence. `unknown` → do not proceed yet; poll with `did_get` or re-verify.
 - Prefer specific claim types (`stripe.refund`, `github.pr_merged`, `github.workflow_passed`, `email.delivered`, `linear.issue_completed`, `sentry.issue_resolved`) over generic ones; use `http.ok` for any public URL health check.
-- For outcomes that must stay true (a subscription staying active, an endpoint staying healthy), set up a `did_watch` instead of re-checking manually.
-- Before calling a project's own agent tool that could have real-world consequences (money, email, deploys, deletes, permissions), call `did_inspect_tool` to learn what it can actually affect; treat `unknown` risk as not shown to be safe. When verifying work such a tool performed, pass its profile as `tools` in `did_verify` so the receipt records what the tool could affect.
+- For outcomes that must stay true (a subscription staying active, an endpoint staying healthy), obtain separate authorization before setting up a `did_watch` instead of re-checking manually.
+- Before calling a project's own agent tool that could have real-world consequences (money, email, deploys, deletes, permissions), call `did_inspect_tool` to learn what it can actually affect; treat `unknown` risk as not shown to be safe. When verifying work such a tool performed, only pass its profile as `tools` when that transfer is authorized in `did_verify` so the receipt records what the tool could affect.
 - Never fabricate a verdict. If DidWork returns an error or the tool is unavailable, say verification could not be performed.

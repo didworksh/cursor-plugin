@@ -1,0 +1,4 @@
+interface:
+  display_name: "Set up DidWork"
+  short_description: "Save scoped consent and test repository verification"
+  default_prompt: "Use $setup to set up DidWork for this repository, explain what data is sent, and ask before saving authorization."

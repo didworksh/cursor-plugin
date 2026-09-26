@@ -4,6 +4,18 @@
 
 This repository packages [DidWork](https://didwork.sh) as a Cursor plugin. DidWork independently verifies that the outcomes software claims to have produced are actually true: it receives a **claim**, gathers **evidence** from the authoritative system (Stripe, GitHub, GitLab, Linear, Jira, Sentry, email, any HTTP endpoint), and returns a **verdict** — `verified`, `failed`, or `unknown` — that your agent can gate on instead of grading its own work.
 
+## First run
+
+Run the **Set up DidWork** skill or `/didwork:setup` where slash commands are supported:
+
+> Set up DidWork for this repository. Explain what data is sent, ask for my consent,
+> and offer to save that consent for future tasks.
+
+Setup asks before sending private repository metadata or saving authorization.
+It supports a one-time check, saved repository-specific consent, and declining.
+Codex tool approval settings are a separate optional choice; they do not disable
+its automatic reviewer or guarantee approval. See the [setup workflow](plugins/didwork/skills/setup/SKILL.md).
+
 ## What's in the plugin
 
 - **MCP server** — `did_verify`, `did_get`, `did_list`, `did_watch`, `did_watches`, `did_unwatch`, `did_usage`, and `did_inspect_tool` (Capability Trust: what a project's agent tools can actually affect, with evidence), provided by the published [`@didwork/mcp`](https://www.npmjs.com/package/@didwork/mcp) and [`@didwork/inspect`](https://www.npmjs.com/package/@didwork/inspect) packages (run via `npx`, nothing vendored here).
